@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :rooms
 
   get 'sessions/sign_up'
+  get 'sessions/sign_in'
 
   resources :users
 
