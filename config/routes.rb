@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :photos
 
-  resources :rooms
+  resources :rooms do
+  resources :photos
+end
 
   get 'sessions/sign_up'
   get 'sessions/sign_in'
