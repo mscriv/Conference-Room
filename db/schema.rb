@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107194943) do
+ActiveRecord::Schema.define(version: 20141110211731) do
 
   create_table "photos", force: true do |t|
     t.string   "image"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20141107194943) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

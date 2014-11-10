@@ -8,23 +8,26 @@
 
 
 <table>
+  <div class="element">
   <thead>
-    <tr>
+
+  <tr>
       <th>Photos</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @room.photos.each do |photo| %>
       <tr>
         <td><%= image_tag photo.image_url(:thumb).to_s %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
 
+  </tbody>
+</div>
+</table>
 <br>
+
 <div>
 <%= link_to 'New Photo', new_room_photo_path %>
 </div>
