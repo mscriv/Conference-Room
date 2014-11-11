@@ -23,9 +23,9 @@
         <td><%= room.sq_ft %></td>
         <td><%= room.description %></td>
         <td><%= link_to 'View Photos', room_photos_path(room) %></td>
-        <td><i class="fi-plus large""></i><%= link_to 'Show', room %></td>
-        <td><i class="fi-pencil large"></i><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><i class="fi-trash large"></i><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', room %></td>
+        <td><%= link_to 'Edit', edit_room_path(room) %></td>
+        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><button class="tiny success button">Reserve</button></td>
       </tr>
     <% end %>
@@ -37,13 +37,3 @@
 
 <button class="small success button"><%= link_to 'Add New Room', new_room_path %></button>
 
-<div class="owl-carousel">
-<div>Your Content </div>
-<div> Your Content </div>
-<div> Your Content </div>
-<div> Your Content </div>
-<div> Your Content </div>
-<div> Your Content </div>
-<div> Your Content </div>
-...
-</div>
