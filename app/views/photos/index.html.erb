@@ -16,7 +16,9 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-  <tbody>
+    <div class="owl-carousel">
+
+    <tbody>
     <% @room.photos.each do |photo| %>
       <tr>
         <td><%= image_tag photo.image_url(:thumb).to_s %></td>

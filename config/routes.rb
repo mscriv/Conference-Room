@@ -1,17 +1,25 @@
 Rails.application.routes.draw do
 
+  ActiveAdmin.routes(self)
   resources :rooms do
-  resources :photos
+    collection do
+      post 'search', to: 'rooms#search'
 end
+  resources :photos
+    end
 
-  get 'sessions/sign_up'
-  get 'sessions/sign_in'
 
+
+
+  get 'signup', to: 'session#signup'
+  post 'signup', to: 'session#signup'
+  post 'signin', to: 'session#signin'
+  delete 'signout', to: 'session#signout'
   resources :users
 
   get 'welcome/index'
 
-  get 'welcome/sign_in'
+  post 'welcome/sign_in'
 
   get 'welcome/sign_up'
 
@@ -19,7 +27,7 @@ end
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'session#welcome'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

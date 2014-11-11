@@ -1,8 +1,13 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
-  # GET /rooms
-  # GET /rooms.json
+
+
+  def search
+    @rooms = Room.for_user(current_user).where('title like ?', "%#{params[:search_query]}")
+    render template: 'rooms/index'
+  end
+
   def index
     @rooms = Room.all
   end

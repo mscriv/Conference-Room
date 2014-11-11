@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <h4>View and Update Conference Rooms!</h4>
+  <h4>New to Tampa Conference Rooms?</h4>
+  <p><%= link_to 'Signup', signup_path, class: 'radius button warning tiny'%></p>
+</div>
+
+    <%= link_to "Signout", signout_path, class: 'radius button alert tiny', method: :delete %>
+
+    <%= form_tag signin_path, class: 'form' do %>
+        <%= text_field_tag 'email', nil, placeholder: 'Enter your email' %>
+        <%= password_field_tag 'password', nil, placeholder: 'Password' %>
+        <%=  submit_tag "Sign in", class: 'radius button tiny' %>
+
+<% end %>
+
+

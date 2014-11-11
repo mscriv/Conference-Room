@@ -1,4 +1,8 @@
 <h2>Conference Rooms</h2>
+<%= form_tag search_rooms_path, classa: 'form' do %>
+    <%= text_field_tag "search_query", nil, placeholder: 'Search text' %>
+    <%= submit_tag "Search", class: 'radius button tiny' %>
+<% end %>
 
 <table>
   <thead>
@@ -30,3 +34,16 @@
 
 <br>
 
+
+<button class="small success button"><%= link_to 'Add New Room', new_room_path %></button>
+
+<div class="owl-carousel">
+<div>Your Content </div>
+<div> Your Content </div>
+<div> Your Content </div>
+<div> Your Content </div>
+<div> Your Content </div>
+<div> Your Content </div>
+<div> Your Content </div>
+...
+</div>

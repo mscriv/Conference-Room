@@ -11,3 +11,5 @@ $(document).ready ->
     autoplay: true
     autoplaySpeed: 2000
   })
+
+  $(".owl-carousel").owlCarousel();
