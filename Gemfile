@@ -6,6 +6,7 @@ gem 'rails', '4.1.6'
 gem 'foundation-rails'
 gem 'kaminari'
 gem 'slick_rails'
+gem 'thin'
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
