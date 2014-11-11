@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
 
 
   def search
-    @rooms = Room.for_user(current_user).where('title like ?', "%#{params[:search_query]}")
+    @rooms = Room.where('name like ?', "%#{params[:search_query]}%")
     render template: 'rooms/index'
   end
 

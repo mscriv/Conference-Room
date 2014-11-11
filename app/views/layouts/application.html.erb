@@ -12,11 +12,22 @@
   </head>
   <body>
     <header>
+
       <%= render 'layouts/navigation' %>
+      <div class="">
+        <% if current_user %>
+            Hello, <%= current_user.name %>.
+            <%= link_to "Sign Out", signout_path("current"), method: "delete" %>
+           <% else %>
+            <%= link_to "Sign Up", signup_path %> or
+            <%= link_to "Sign In", signin_path, method: "post" %>
+         <% end %>
+      </div>
     </header>
     <main role="main">
        <%= render 'layouts/messages' %>
        <%= yield %>
+
     </main>
   </body>
 </html>

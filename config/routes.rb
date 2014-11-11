@@ -4,15 +4,15 @@ Rails.application.routes.draw do
   resources :rooms do
     collection do
       post 'search', to: 'rooms#search'
-end
+      end
   resources :photos
     end
 
 
 
-
   get 'signup', to: 'session#signup'
   post 'signup', to: 'session#signup'
+  get 'signin', to: 'session#signin'
   post 'signin', to: 'session#signin'
   delete 'signout', to: 'session#signout'
   resources :users
