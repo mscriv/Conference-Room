@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: reservations
+#
+#  id         :integer          not null, primary key
+#  date       :string(255)
+#  starts_at  :string(255)
+#  ends_at    :string(255)
+#  room_id    :integer
+#  user_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  starts_at: MyString
+  ends_at: MyString
+  room_id: 
+  user_id: 
+
+two:
+  date: MyString
+  starts_at: MyString
+  ends_at: MyString
+  room_id: 
+  user_id: 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111150250) do
+ActiveRecord::Schema.define(version: 20141113134428) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20141111150250) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
 
+  create_table "campus", force: true do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "phone_number"
+    t.integer  "zip_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "photos", force: true do |t|
     t.string   "image"
     t.integer  "room_id"
@@ -37,6 +47,19 @@ ActiveRecord::Schema.define(version: 20141111150250) do
 
   add_index "photos", ["room_id"], name: "index_photos_on_room_id"
 
+  create_table "reservations", force: true do |t|
+    t.string   "date"
+    t.string   "starts_at"
+    t.string   "ends_at"
+    t.integer  "room_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reservations", ["room_id"], name: "index_reservations_on_room_id"
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id"
+
   create_table "rooms", force: true do |t|
     t.string   "name"
     t.string   "location"
@@ -44,7 +67,10 @@ ActiveRecord::Schema.define(version: 20141111150250) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "campus_id"
   end
+
+  add_index "rooms", ["campus_id"], name: "index_rooms_on_campus_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

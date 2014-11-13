@@ -9,8 +9,10 @@
 #  description :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  campus_id   :integer
 #
 
 class Room < ActiveRecord::Base
   has_many :photos
+  has_many :reservations
 end
