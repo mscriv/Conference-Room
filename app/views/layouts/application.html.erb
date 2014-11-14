@@ -17,10 +17,11 @@
       <div class="side-nav">
         <% if current_user %>
             Hello, <%= current_user.name %>.
-            <%= link_to "Sign Out", signout_path("current"), method: "delete" %>
-           <% else %>
-         <h4> Welcome!</h4>
-         <% end %>
+            <%= link_to "Sign Out", signout_path, class: "button tiny" %>
+      <% else %>
+            <%= link_to "Sign Up", signup_path, class: "button tiny" %>
+            <%= link_to "Sign In", signin_path, class: "button tiny" %>
+        <% end %>
       </div>
     </header>
     <main role="main">
@@ -30,3 +31,4 @@
     </main>
   </body>
 </html>
+

@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :reservations
-
-  resources :campus
+  resources :reservations, :sessions, :users, :campus
 
   ActiveAdmin.routes(self)
   resources :rooms do
@@ -12,26 +10,14 @@ Rails.application.routes.draw do
   resources :photos
     end
 
-
-
-  get 'signup', to: 'session#signup'
-  post 'signup', to: 'session#signup'
-  get 'signin', to: 'session#signin'
-  post 'signin', to: 'session#signin'
-  delete 'signout', to: 'session#signout'
-  resources :users
-
-  get 'welcome/index'
-
-  post 'welcome/sign_in'
-
-  get 'welcome/sign_up'
-
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'signin', to: 'sessions#new', as: 'signin'
+  get 'signout', to: 'sessions#signout', as: 'signout'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'session#welcome'
+  root 'sessions#welcome'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

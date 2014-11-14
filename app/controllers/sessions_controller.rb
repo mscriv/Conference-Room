@@ -1,4 +1,4 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
   skip_before_action :authenticate, only: [:welcome, :signin, :signup]
 
   def signup
@@ -18,19 +18,16 @@ class SessionController < ApplicationController
     end
   end
 
-  def signin
-      user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
-
-      if user && user.authenticate(params[:password])
-        session[:user_id] = user.id
-        flash[:notice] = 'You have signed in'
-        redirect_to rooms_path
-      else
-        session[:user_id] = nil
-        flash[:error] = 'Unable to login with those credentials'
-        redirect_to root_path
-
-      end
+  def create
+    user = User.find_by_email(params[:email])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      flash[:notice] = "Logged in"
+      redirect_to rooms_path
+    else
+      flash.now.alert = "Email or password is invalid"
+      render "new"
+    end
   end
 
   def signout

@@ -10,20 +10,24 @@
       </ul>
     </div>
   <% end %>
-
+    <h2 class="form-signin-heading">Please sign up</h2>
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
   </div>
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
   </div>
   <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
   </div>
-  <div class="actions">
-    <%= f.submit %>
+    <div class="field">
+      <%= password_field_tag 'password_confirmation', nil, placeholder: 'Password_confirmation' %>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
   </div>
 <% end %>

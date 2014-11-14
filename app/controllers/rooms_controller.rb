@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
+  before_filter :authorize, only: [:new, :index, :destroy]
 
 
   def search
