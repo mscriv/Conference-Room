@@ -10,24 +10,37 @@
       </ul>
     </div>
   <% end %>
-    <h2 class="form-signin-heading">Please sign up</h2>
-  <div class="field">
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+    <h2 class="form-signup-heading">Please sign up</h2>
+
+  <div class="large-6 columns">
+
+      <div class="field">
+       <input type="text" id="inputName" placeholder="Name">
+      </div>
+
+      <div class="field">
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+      </div>
+
+      <div class="field">
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+      </div>
+
+      <div class="field">
+        <%= password_field_tag 'password_confirmation', nil, placeholder: 'Password_confirmation' %>
+      </div>
+
+      <div class="checkbox">
+         <label>
+           <input type="checkbox" value="remember-me"> Remember me
+         </label>
+      </div>
+
+      <div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+      </div>
+
   </div>
-  <div class="field">
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-  </div>
-  <div class="field">
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-  </div>
-    <div class="field">
-      <%= password_field_tag 'password_confirmation', nil, placeholder: 'Password_confirmation' %>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-  </div>
+
 <% end %>
+
