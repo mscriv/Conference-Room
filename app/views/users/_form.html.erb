@@ -1,46 +1,21 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<h2>Please sign up</h2>
+<div class="form">
+  <%= simple_form_for @user do |form| %>
+      <%= form.input :name, label: false, placeholder: 'Name', autofocus: true %>
+      <%= form.input :email, label: false, placeholder: 'Email Address' %>
+      <%= form.input :password, label: false, placeholder: 'Password' %>
+      <%= form.input :password_confirmation, label: false, placeholder: 'Password Confirmation' %>
+      <div class="boolean input optional checkbox" id="user_remember_me_input">
+        <input name="user[remember_me]" type="hidden" value="0" />
+        <label class=" control-label" for="user_remember_me">
+          <input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
+          Remember me
+        </label>
+      </div>
+      <%= form.button :submit, 'Sign up', class: 'large radius button [secondary success alert];'  %>
   <% end %>
-    <h2 class="form-signup-heading">Please sign up</h2>
 
-  <div class="large-6 columns">
+</div>
 
-      <div class="field">
-       <input type="text" id="inputName" placeholder="Name">
-      </div>
-
-      <div class="field">
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-      </div>
-
-      <div class="field">
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-      </div>
-
-      <div class="field">
-        <%= password_field_tag 'password_confirmation', nil, placeholder: 'Password_confirmation' %>
-      </div>
-
-      <div class="checkbox">
-         <label>
-           <input type="checkbox" value="remember-me"> Remember me
-         </label>
-      </div>
-
-      <div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-      </div>
-
-  </div>
-
-<% end %>
 
