@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :campuses
+
   resources :reservations, :sessions, :users, :campus
 
   ActiveAdmin.routes(self)
