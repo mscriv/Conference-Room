@@ -15,4 +15,6 @@
 class Room < ActiveRecord::Base
   has_many :photos
   has_many :reservations
+  validates :name, :campus, presence: true
+
 end

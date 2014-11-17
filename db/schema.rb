@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113192457) do
+ActiveRecord::Schema.define(version: 20141117200042) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20141113192457) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "event_title"
   end
 
   add_index "reservations", ["room_id"], name: "index_reservations_on_room_id"
@@ -79,6 +80,9 @@ ActiveRecord::Schema.define(version: 20141113192457) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role",            limit: 25, default: "student"
+    t.integer  "campus_id"
   end
+
+  add_index "users", ["campus_id"], name: "index_users_on_campus_id"
 
 end

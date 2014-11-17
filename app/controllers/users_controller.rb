@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_filter :authorize, only: [:index, :destroy]
 
 
+
   def index
     @users = User.all
   end
@@ -67,6 +68,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password)
+      params.require(:user).permit(:name, :email, :password, :campus_id)
     end
 end
