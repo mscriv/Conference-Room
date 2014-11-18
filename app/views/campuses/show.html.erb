@@ -1,19 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Index:</strong>
-  <%= @campus.index %>
+  <strong>Name:</strong>
+  <%= @campus.name %>
 </p>
 
 <p>
-  <strong>New:</strong>
-  <%= @campus.new %>
+  <strong>City:</strong>
+  <%= @campus.city %>
 </p>
 
 <p>
-  <strong>Show:</strong>
-  <%= @campus.show %>
+  <strong>State:</strong>
+  <%= @campus.state %>
 </p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @campus.address %>
+</p>
+
+<p>
+  <strong>Zip code:</strong>
+  <%= @campus.zip_code %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @campus.phone %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_campus_path(@campus) %> |
 <%= link_to 'Back', campuses_path %>
