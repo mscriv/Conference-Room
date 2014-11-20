@@ -16,6 +16,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  event_title: Hackathon
   date: MyString
   starts_at: MyString
   ends_at: MyString
@@ -23,6 +24,7 @@ one:
   user_id: 
 
 two:
+  event_title: Hackathon
   date: MyString
   starts_at: MyString
   ends_at: MyString

@@ -16,11 +16,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  index: MyString
-  new: MyString
-  show: MyString
+  name: Tampa IronYard
+  city: St. Petersburg
+  state: Fl
+  phone: 813-999-9999
+  address: 260 1st Ave. S St. Petersburg, Fl
+  zip_code: 33131
 
 two:
-  index: MyString
-  new: MyString
-  show: MyString
+  name: Atlanta IronYard
+  city: Atlanta
+  state: Ga
+  phone: 404-999-9999
+  address: 260 21st Ave. Atlanta, Ga
+  zip_code: 14123

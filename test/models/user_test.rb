@@ -15,7 +15,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "User's exist" do
+    assert true
+  end
 end
