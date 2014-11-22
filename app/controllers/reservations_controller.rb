@@ -1,4 +1,5 @@
 class ReservationsController < InheritedResources::Base
+  before_filter :authorize, only: [:new, :index, :destroy]
 
   private
 

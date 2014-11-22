@@ -4,7 +4,7 @@
   <%= simple_form_for @user do |form| %>
       <%= form.input :name, label: false, placeholder: 'Name', autofocus: true %>
       <%= form.input :email, label: false, placeholder: 'Email Address' %>
-      <%= form.select :campus_id, Campus.all.collect{ |i| [i.name, i.id]} %>
+      <%= form.select :campus_id, Campus.all.collect{ |c| [c.name, c.id]} %>
       <%= form.input :password, label: false, placeholder: 'Password' %>
       <%= form.input :password_confirmation, label: false, placeholder: 'Password Confirmation' %>
       <div class="boolean input optional checkbox" id="user_remember_me_input">
@@ -14,7 +14,7 @@
           Remember me
         </label>
       </div>
-      <%= form.button :submit, 'Sign up', class: 'large radius button [secondary success alert];'  %>
+      <%= form.button :submit, 'Submit', class: 'large radius button [secondary success alert];'  %>
   <% end %>
 
 </div>

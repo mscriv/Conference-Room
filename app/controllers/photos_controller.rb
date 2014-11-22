@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize, only: [:new, :index, :destroy]
 
   # GET /photos
   # GET /photos.json
