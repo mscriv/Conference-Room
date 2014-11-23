@@ -1,6 +1,4 @@
 class CampusesController < InheritedResources::Base
-  before_filter :authorize, only: [:new, :index, :destroy]
-
 
   def index
     @campuses = Campus.all
