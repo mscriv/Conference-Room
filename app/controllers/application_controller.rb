@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def require_staff
-    if current_user.role == 'staff'
+    if current_user.role == 'Staff'
       return true
     else
       redirect_to root_path
