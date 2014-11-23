@@ -9,8 +9,6 @@
       <%= f.input :ends_at, label: false, placeholder: 'End Time', autofocus: true %>
       <%= f.input :user_id, label: false, placeholder: 'Name', autofocus: true %>
       <%= f.input :room_id, label: false, placeholder: 'Conference Room', autofocus: true %>
-      <%= f.select :room_id, Room.all.collect{ |r| [r.name, r.id]}, label: false, placeholder: 'Conference Rooms', autofocus: true %>
-
   <div>
       <%= f.button :submit, 'Submit', class: 'radius button [secondary success alert];'  %>
   <% end %>
