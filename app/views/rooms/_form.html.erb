@@ -27,6 +27,11 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
+    <div class="field">
+      <%= f.label :campus %><br>
+      <%= f.select :campus_id, Campus.all.collect{ |c| [c.name, c.id]} %>
+    </div>
   <div class="actions">
     <%= f.submit %>
   </div>

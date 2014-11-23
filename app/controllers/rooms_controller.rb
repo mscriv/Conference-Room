@@ -3,7 +3,6 @@ class RoomsController < ApplicationController
 
   before_filter :authorize, only: [:new, :index, :destroy]
 
-
   def search
     @rooms = Room.where('name like ?', "%#{params[:search_query]}%")
     render template: 'rooms/index'
@@ -31,6 +30,7 @@ class RoomsController < ApplicationController
   # POST /rooms.json
   def create
     @room = Room.new(room_params)
+    @campus = Campus.where({ :_id => [1,2,3] })
 
     respond_to do |format|
       if @room.save
@@ -75,6 +75,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:name, :location, :sq_ft, :description, :campus)
+      params.require(:room).permit(:name, :location, :sq_ft, :description, :campus_id)
     end
 end

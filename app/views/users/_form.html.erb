@@ -5,6 +5,9 @@
       <%= form.input :name, label: false, placeholder: 'Name', autofocus: true %>
       <%= form.input :email, label: false, placeholder: 'Email Address' %>
       <%= form.select :campus_id, Campus.all.collect{ |c| [c.name, c.id]} %>
+      <% if current_user && current_user.role == 'staff' %>
+<%= form.select :role, options_for_select(%w(Student Staff), 'Student') %>
+          <% end %>
       <%= form.input :password, label: false, placeholder: 'Password' %>
       <%= form.input :password_confirmation, label: false, placeholder: 'Password Confirmation' %>
       <div class="boolean input optional checkbox" id="user_remember_me_input">

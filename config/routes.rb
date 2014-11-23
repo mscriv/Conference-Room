@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :reservations, :sessions, :users, :campuses
 
   ActiveAdmin.routes(self)
+
   resources :rooms do
     collection do
       post 'search', to: 'rooms#search'
