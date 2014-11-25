@@ -10,11 +10,9 @@
           <% end %>
       <%= form.input :password, label: false, placeholder: 'Password' %>
       <%= form.input :password_confirmation, label: false, placeholder: 'Password Confirmation' %>
-      <div class="boolean input optional checkbox" id="user_remember_me_input">
-        <input name="user[remember_me]" type="hidden" value="0" />
-        <label class=" control-label" for="user_remember_me">
-          <input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" />
-          Remember me
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
       <%= form.button :submit, 'Submit', class: 'large radius button [secondary success alert];'  %>
