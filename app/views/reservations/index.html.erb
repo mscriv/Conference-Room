@@ -20,7 +20,7 @@
         <td><%= reservation.date %></td>
         <td><%= reservation.starts_at %></td>
         <td><%= reservation.ends_at %></td>
-        <td><%= reservation.room %></td>
+        <td><%= reservation.room.name %></td>
         <td><%= @current_user.name %></td>
         <td><%= link_to 'Show', reservation %></td>
         <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
