@@ -1,4 +1,4 @@
-<%= form_for(@room) do |f| %>
+<%= form_for (@room) do |f| %>
   <% if @room.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
@@ -28,10 +28,9 @@
     <%= f.text_area :description %>
   </div>
 
-    <div class="field">
-      <%= f.label :campus %><br>
-      <%= f.select :campus_id, Campus.all.collect{ |c| [c.name, c.id]} %>
-    </div>
+    <%= f.label :campus_id %><br>
+    <%= f.text_area :campus_id %></br>
+
   <div class="actions">
     <%= f.submit %>
   </div>
