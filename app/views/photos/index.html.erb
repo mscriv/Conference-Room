@@ -16,18 +16,18 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-    <div class="owl-carousel">
-
-    <tbody>
-    <% @room.photos.each do |photo| %>
-      <tr>
-        <td><%= image_tag photo.image_url(:thumb).to_s %></td>
-      </tr>
-    <% end %>
-
-  </tbody>
-</div>
 </table>
+
+    <div class="row">
+    <% @room.photos.each do |photo| %>
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <%= image_tag photo.image_url(:thumb).to_s %>
+              </div>
+          </div>
+    <% end %>
+  </div>
+
 <br>
 
 <div>

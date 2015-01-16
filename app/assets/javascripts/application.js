@@ -12,12 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require foundation
-//= require slick
+//= require turbolinks
 //= require_tree .
-$(function() {
-  $(document).foundation();
-});
 
-//= require owl.carousel
+$(document).ready(function(){
+  $("button").on("click", function(){
+    var message = $("<span></span>");
+    $("footage span").append(message);
+    $(this).remove();
+  });
+});
